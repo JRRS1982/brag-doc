@@ -20,6 +20,10 @@
   So after a conversation in the office with the design lead, i choose to dedicate some time to implement figma code connect, this would create a direct connection between the figma design and the code, so the design team can see what we have, and provide examples that they would like us to implement! This would allow us to exactly replicate the design in the code (rather than guess sizes and colors).
   I have deployed the initial connection and am working with the design team to implement this across all other components, this is exciting work as it hopefully creates a pipeline for the design team to take the lead on what a component should look like and maybe even use other addons to export react components from figma that the engineering team can review and plug into the codebase.
 
+* **Gateway Service Update**
+  We have a gateway service that is used by the chameleon frontend to make requests to the backend services that it uses. This service used apollo server v2 and a range of other packages with 24 critical vulnerabilities. In January 2026, apollo server v2 had reached beyond end of life and was no longer receiving updates. The application had become a security risk. After failed attempts to get the packages updated by two other senior plus engineers (due to version incompatibility) there was discussion around rewriting the application, given the amount of work that would entail i took steps to modernise the application and update packages without a full rewrite.
+  After significant efforts and with the support of AI tooling i was able to modernise the application and improve the quality of code, updating 350 files and incrementing the version of multiple packages, and taking the application from 24 critical vulnerabilities to 1. The application is now in a much better state, with apollo server v4, and is more maintainable, secure, and the code is much cleaner and easier to understand.
+
 ---
 
 ## 2025

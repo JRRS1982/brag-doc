@@ -7,6 +7,9 @@
 
 ## 2026
 
+* **Enabling non-engineers to build and deploy their own features**
+  The `chameleon-results` service is an app overlay on top of the chameleon services' thank you page. I have been leading and working on a project to enable non-engineers to build, deploy and A/B test their own features on this using AI tooling in stg. This has involved working with the platform team to create ephemeral branches of a forked `chameleon-results` project called `chameleon-results-experiments`. Using a feature flag to create a staging or production instance (on its own domain) the non-engineers can create and test their features without any engineering support or involvement, which means fast iteration and deployment of new features and the master branch is protected.
+
 * **10% time – Replacing flaky Selenium tests with Playwright**
   The team has long been frustrated by a custom Selenium test suite (`chameleon-acceptance-tests`). It takes ~1 hour 45 minutes to run, is full of race conditions and flaky behaviour, and has severely impacted developer productivity and engagement. As a result, we are missing coverage for key features, including BrowserStack integration, which we have been unable to achieve despite over a year of discussions with BrowserStack support.
   I chose to dedicate my 10% study time to building a prototype replacement: a new `chameleon-tests` service using Playwright. Initial results show Playwright is vastly superior to Selenium and integrates cleanly with BrowserStack. Equivalent tests now run in ~236ms instead of ~4 minutes. Given there are hundreds of tests, run multiple times per day across multiple suites, this represents a step-change improvement in speed, reliability, and developer experience. This project is about to be presented to the tech department for feedback and endorsement so that we can move forward with the full implementation and dedicate engineering time to it.
